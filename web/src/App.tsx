@@ -5,6 +5,8 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import ThemeToggle from './components/ThemeToggle';
 import Landing from './pages/Landing';
 import ExamList from './pages/ExamList';
+import Auth from './pages/Auth';
+import Dashboard from './pages/Dashboard';
 import './index.css';
 
 const Navbar: React.FC = () => {
@@ -75,13 +77,13 @@ const AppRoutes: React.FC = () => {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/exams" element={<ExamList />} />
-        <Route path="/exams/:id" element={<div className="p-8 text-center">Exam Detail - Coming Soon</div>} />
-        <Route path="/auth" element={<div className="p-8 text-center">Auth Page - Coming Soon</div>} />
+        <Route path="/exams/:id" element={<div className="p-8 text-center text-text-primary-light dark:text-text-primary-dark">Exam Detail - Coming Soon</div>} />
+        <Route path="/auth" element={<Auth />} />
         <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <div className="p-8 text-center">Dashboard - Coming Soon</div>
+              <Dashboard />
             </ProtectedRoute>
           }
         />
@@ -89,7 +91,7 @@ const AppRoutes: React.FC = () => {
           path="/profile"
           element={
             <ProtectedRoute>
-              <div className="p-8 text-center">Profile - Coming Soon</div>
+              <div className="p-8 text-center text-text-primary-light dark:text-text-primary-dark">Profile - Coming Soon</div>
             </ProtectedRoute>
           }
         />
