@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 // GATE CS Syllabus Data
-const gateCS Syllabus = [
+const gateCS_Syllabus = [
   { section: 'Programming', topics: ['C Programming', 'Data Types', 'Control Structures', 'Functions', 'Pointers'], weightage: '10%', importance: 'High' },
   { section: 'Data Structures', topics: ['Arrays', 'Linked Lists', 'Stacks', 'Queues', 'Trees', 'Graphs', 'Hashing'], weightage: '12%', importance: 'High' },
   { section: 'Algorithms', topics: ['Searching', 'Sorting', 'Greedy', 'Dynamic Programming', 'Graph Algorithms'], weightage: '13%', importance: 'High' },
@@ -65,7 +65,7 @@ const sampleGateCSPYQs = [
 ];
 
 // GATE CS Tips
-const gateCS Tips = [
+const gateCS_Tips = [
   { category: 'Preparation Strategy', title: 'Start with Strong Fundamentals', content: 'Focus on core subjects like Data Structures, Algorithms, and Operating Systems first as they carry maximum weightage.', priority: 10 },
   { category: 'Time Management', title: 'Practice with Time Limits', content: 'Solve previous year questions within the actual exam time limit to improve speed and accuracy.', priority: 9 },
   { category: 'Recommended Books', title: 'Must-Read Books for GATE CS', content: 'Data Structures - Cormen (CLRS), Operating Systems - Galvin, Database Systems - Korth', priority: 8 },
@@ -109,8 +109,8 @@ let tipsData = '';
 let pyqsData = '';
 
 // GATE CS (exam_id = 1)
-syllabusData += generateSyllabusSql(1, 'GATE CS', gateCSSyllabus);
-tipsData += generateTipsSql(1, 'GATE CS', gateCSTips);
+syllabusData += generateSyllabusSql(1, 'GATE CS', gateCS_Syllabus);
+tipsData += generateTipsSql(1, 'GATE CS', gateCS_Tips);
 pyqsData += generatePYQsSql(1, 'GATE CS', sampleGateCSPYQs, [2020, 2021, 2022, 2023, 2024, 2025]);
 
 // Write to files

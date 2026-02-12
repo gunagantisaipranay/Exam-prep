@@ -9,15 +9,16 @@ import {
   setDailyGoal,
   getGoalProgress
 } from '../controllers/statsController';
+import { generalLimiter } from '../middleware/rateLimiter';
 
 const router = Router();
 
-router.get('/today', authenticateToken, getTodayStats);
-router.get('/overall', authenticateToken, getOverallStats);
-router.get('/topics', authenticateToken, getTopicStats);
-router.get('/streak', authenticateToken, getStreak);
-router.get('/weekly', authenticateToken, getWeeklyStats);
-router.post('/goals/set', authenticateToken, setDailyGoal);
-router.get('/goals/progress', authenticateToken, getGoalProgress);
+router.get('/today', generalLimiter, authenticateToken, getTodayStats);
+router.get('/overall', generalLimiter, authenticateToken, getOverallStats);
+router.get('/topics', generalLimiter, authenticateToken, getTopicStats);
+router.get('/streak', generalLimiter, authenticateToken, getStreak);
+router.get('/weekly', generalLimiter, authenticateToken, getWeeklyStats);
+router.post('/goals/set', generalLimiter, authenticateToken, setDailyGoal);
+router.get('/goals/progress', generalLimiter, authenticateToken, getGoalProgress);
 
 export default router;
